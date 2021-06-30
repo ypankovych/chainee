@@ -145,10 +145,7 @@ def get_union_verbose_name(union):
     elif isinstance(union, UnionAnd):
         return "AND"
     elif isinstance(union, InvertedUnion):
-        if isinstance(union.union, UnionOr):
-            return "OR NOT"
-        else:
-            return "AND NOT"
+        return "NOT"
 
 
 def get_predicate_verbose_name(predicate):

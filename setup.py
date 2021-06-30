@@ -1,6 +1,6 @@
 from distutils.core import setup
 
-version = "1.1"
+version = "1.2"
 setup(
     name='chainee',
     packages=['chainee'],

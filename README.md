@@ -61,7 +61,7 @@ Now, lets build an actual tree:
 ```python
 >>> tree = chain.to_tree()
 >>> print(tree)
-OR NOT
+NOT
 └── OR
     ├── AND
     │   ├── Predicate(validate_name_lower)

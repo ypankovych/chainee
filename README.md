@@ -61,13 +61,13 @@ Now, lets build an actual tree:
 ```python
 >>> tree = chain.to_tree()
 >>> print(tree)
-InvertedUnion
-└── UnionOr
-    ├── UnionAnd
+OR NOT
+└── OR
+    ├── AND
     │   ├── Predicate(validate_name_lower)
     │   └── Predicate(validate_name_length)
-    └── UnionAnd
-        ├── InvertedPredicate(validate_name_lower)
+    └── AND
+        ├── NOT Predicate(validate_name_lower)
         └── Predicate(validate_name_length)
 ```
 You can convert it into a picture as well:

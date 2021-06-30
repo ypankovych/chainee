@@ -14,7 +14,7 @@ class _NodeNameUnifier:
 
     def __call__(self, node: Node):
         if node not in self._nodes:
-            node.name = f"{node.name}-{len(self._nodes)}"
+            node.name = f"{node.name} ({len(self._nodes)})"
             self._nodes.append(node)
         return node.name
 
@@ -37,6 +37,8 @@ class BasePredicate:
     description: str = field(init=False)
 
     def __post_init__(self):
+        if not callable(self.func):
+            raise TypeError("Predicate function should be a callable object")
         self.description = self.func.__doc__
 
     def __or__(self, other):
@@ -49,7 +51,7 @@ class BasePredicate:
         return self.func(*args, **kwargs)
 
     def _to_tree(self, root):
-        return Node(f"{type(self).__name__}({self.func.__name__})", parent=root)
+        return Node(get_predicate_verbose_name(self), parent=root)
 
 
 class InvertedPredicate(BasePredicate):
@@ -103,7 +105,7 @@ class Union(BaseUnion):
     rhs: typing.Union[BasePredicate, BaseUnion]
 
     def _to_tree(self, parent=None):
-        root = Node(type(self).__name__, parent=parent)
+        root = Node(get_union_verbose_name(self), parent=parent)
         self.rhs._to_tree(root)
         self.lhs._to_tree(root)
         return root
@@ -120,7 +122,7 @@ class InvertedUnion(BaseUnion):
         return not self.union(*args, **kwargs)
 
     def _to_tree(self, parent=None):
-        root = Node(type(self).__name__, parent=parent)
+        root = Node(get_union_verbose_name(self), parent=parent)
         self.union._to_tree(root)
         return root
 
@@ -135,3 +137,22 @@ class UnionOr(Union):
 
     def __call__(self, *args, **kwargs):
         return self.lhs(*args, **kwargs) or self.rhs(*args, **kwargs)
+
+
+def get_union_verbose_name(union):
+    if isinstance(union, UnionOr):
+        return "OR"
+    elif isinstance(union, UnionAnd):
+        return "AND"
+    elif isinstance(union, InvertedUnion):
+        if isinstance(union.union, UnionOr):
+            return "OR NOT"
+        else:
+            return "AND NOT"
+
+
+def get_predicate_verbose_name(predicate):
+    name = f"Predicate({predicate.func.__name__})"
+    if isinstance(predicate, InvertedPredicate):
+        name = "NOT " + name
+    return name

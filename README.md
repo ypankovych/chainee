@@ -1,4 +1,14 @@
-## Chainee
+# Chainee
+
+
+[![Downloads](https://static.pepy.tech/personalized-badge/chainee?period=total&units=none&left_color=grey&right_color=blue&left_text=Downloads)](https://pepy.tech/project/chainee)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/chainee.svg)](https://pypi.python.org/pypi/chainee/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/ypankovych/chainee/graphs/commit-activity)
+[![MIT License](https://img.shields.io/pypi/l/chainee.svg)](https://opensource.org/licenses/MIT)
+[![PyPi status](https://img.shields.io/pypi/status/chainee.svg)](https://pypi.python.org/pypi/chainee)
+[![PyPI version fury.io](https://badge.fury.io/py/chainee.svg)](https://pypi.python.org/pypi/chainee/)
+[![PyPI implementation](https://img.shields.io/pypi/implementation/chainee.svg)](https://pypi.python.org/pypi/chainee/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 ### What is this?
 > Chainee is a simple chaining tool for your predicates. 

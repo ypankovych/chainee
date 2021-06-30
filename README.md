@@ -5,6 +5,10 @@
 > 
 > Chain any number of predicates as deep as you want, and visualize it.
 
+### Installation
+
+`pip install chainee`
+
 ### Usage
 
 Everything is based on `P` object (`from chainee import P`), you simply wrap your predicates with `P`

@@ -75,5 +75,5 @@ You can convert it into a picture as well:
 >>> tree.to_picture("tree.png")
 ```
 Which gives us the following:
-![tree](https://user-images.githubusercontent.com/31005942/123981892-48543a00-d9cb-11eb-846b-e9789127a187.png)
+![tree](https://user-images.githubusercontent.com/31005942/123983817-d4b32c80-d9cc-11eb-8df2-2e44d26c4fc5.png)
 

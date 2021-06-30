@@ -1,6 +1,6 @@
 ## Chainee
 
-### WHat is this?
+### What is this?
 > Chainee is a simple chaining tool for your predicates. 
 > 
 > Chain any number of predicates as deep as you want, and visualize it.

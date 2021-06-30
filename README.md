@@ -61,3 +61,5 @@ You can convert it into a picture as well:
 >>> tree.to_picture("tree.png")
 ```
 Which gives us the following:
+![tree](https://user-images.githubusercontent.com/31005942/123926790-eb3d9180-d994-11eb-8307-1c3a36103538.png)
+

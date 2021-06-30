@@ -130,14 +130,8 @@ class UnionAnd(Union):
     def __call__(self, *args, **kwargs):
         return self.lhs(*args, **kwargs) and self.rhs(*args, **kwargs)
 
-    def __or__(self, other):
-        return UnionOr(self, other)
-
 
 class UnionOr(Union):
 
     def __call__(self, *args, **kwargs):
         return self.lhs(*args, **kwargs) or self.rhs(*args, **kwargs)
-
-    def __and__(self, other):
-        return UnionAnd(self, other)

@@ -17,7 +17,7 @@
 
 ### Installation
 
-`pip install chainee`
+`pip install --user chainee`
 
 ### Usage
 
